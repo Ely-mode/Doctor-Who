@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+
+		<title>Doctor Whomst Ratings</title>
+
+	</head>
+
+	<body>
+		<style>
+
+		@font-face {
+		  font-family: myFirstFont;
+		  src: url("fonts/Futura-Book.woff2") format("woff2") ;
+		  src: url("fonts/Futura-Book.woff") format("woff") ;
+		  src: url("fonts/Futura-Book.ttf") format("truetype") ;
+		  src: url("fonts/Futura-Book.otf") format("opentype") ;
+		}
+		body {
+		  background-image: url('stars.jpg');
+		  background-size: cover;
+		  font-family: myFirstFont;
+		}
+
+		* {
+		  box-sizing: border-box;
+		}
+		
+		.title {
+
+		  background-image: linear-gradient(to right, rgba(02,50,43,0), rgba(02,50,43,1),rgba(02,50,43,0));
+		  width:90%;
+		  left: 5%;
+		  height:40px;
+		  top:16px;
+		  position:fixed;
+		  z-index:3;
+		  display: flex;
+		  justify-content: center;
+		  align-items: center;
+
+		}
+		.tabSeason{
+		  font-size: 12px; 
+		  top:56px; 
+		  width:90%;
+		  left:5%; 
+		  position:fixed; 
+		  color: white; 
+		  white-space: nowrap
+		}
+		.tabSeason button {
+		  background-color: transparent;
+		  border: none;
+		  color: white;
+		  padding: 4px 2.375%;
+		  text-align: center;
+		  text-decoration: none;
+		  display: inline-block;
+		  font-size: 16px;
+		  margin: 4px 2px;
+		  cursor: pointer;
+		  outline: none;
+		}
+		.tabSeason button:hover{
+		  background-color: rgba(02,50,43);
+		  color: white;
+		}
+		.tabSeason button.active {
+		background-color: rgba(02,50,43,0.6);
+		border-radius: 8px 8px 0px 0px;
+		padding: 6px 2.375%;
+		}
+		.tabcontent {
+		  border: 2px solid rgba(02,65,50,1);
+		  border-top: none;
+		  color: white;
+		  background-color:rgba(02,50,43,0.6); 
+		  width: 92%;
+		  left: 4%; 
+		  top: 90px;
+		  height:528px;
+		  position:fixed;
+		  border-radius: 15px;
+		  padding-left: 4%;
+		}
+		
+		.boxes {
+			background-color: rgb(90,90,90);
+			border-radius: 8px 8px 8px 8px;
+			text-align: center;
+			height: 28px;
+			font-size: 90%;
+			font-weight: 900;
+			color: black;
+			width: 70px;
+		}
+		th{
+		  white-space: nowrap;
+		}
+		 .row-seperator{
+		border-top: solid transparent 50px;
+		}
+
+		</style>
+		
+
+		<div class="title">
+			<h1 style="color: white; font-size: 150%;">DOCTOR WHOMST</h1>
+		</div>
+		<div class="tabSeason">
+		
+			<button class="tablinks" onclick="openSeason(0)">1</button><!--
+			--><button class="tablinks" onclick="openSeason(1)">2</button><!--
+			--><button class="tablinks" onclick="openSeason(2)">3</button><!--
+			--><button class="tablinks" onclick="openSeason(3)">4</button><!--
+			--><button class="tablinks" onclick="openSeason(4)">5</button><!--
+			--><button class="tablinks" onclick="openSeason(5)">6</button><!--
+			--><button class="tablinks" onclick="openSeason(6)">7</button><!--
+			--><button class="tablinks" onclick="openSeason(7)">8</button><!--
+			--><button class="tablinks" onclick="openSeason(8)">9</button><!--
+			--><button class="tablinks" onclick="openSeason(9)">10</button><!--
+			--><button class="tablinks" onclick="openSeason(10)">11</button><!--
+			--><button class="tablinks" onclick="openSeason(11)">12</button><!--
+			--><button class="tablinks" onclick="openSeason(12)">13</button><!--
+			--><button class="tablinks" onclick="openSeason(13)">14</button><!--
+			--><button class="tablinks" onclick="openSeason(14)">15</button><!--
+			--><button class="tablinks" onclick="openSeason(15)">Extras</button>
+			
+		</div>
+		<div class= "tabcontent">
+			<div style= "margin-top: 16px; float: left;">
+				<table style="color: white; table-layout: fixed; border-spacing: 5px; border-spacing: px 4px;">
+				  <tr>
+					<th></th>
+					<th></th>
+					<th scope="col">ely</th>
+					<th scope="col">anastasia</th>
+					<th scope="col">aber</th>
+				  </tr>
+				  <tr>
+					<th scope="row">Chrimmas</th>
+					<th></th>
+					<td class="boxes" id="e0"></td>
+					<td class="boxes" id="e14"></td>
+					<td class="boxes" id="e28"></td>
+				  </tr>
+				  <tr>
+					<th scope="row">Episode 1</th>
+					<th></th>
+					<td class="boxes" id="e1"></td>
+					<td class="boxes" id="e15"></td>
+					<td class="boxes" id="e29"></td>
+				  </tr>
+				  <tr>
+					<th scope="row">Episode 2</th>
+					<th></th>
+					<td class="boxes" id="e2"></td>
+					<td class="boxes" id="e16"></td>
+					<td class="boxes" id="e30"></td>
+				  </tr>
+				  <tr>
+					<th scope="row">Episode 3</th>
+					<th></th>
+					<td class="boxes" id="e3"></td>
+					<td class="boxes" id="e17"></td>
+					<td class="boxes" id="e31"></td>
+				  </tr>
+				  <tr>
+					<th scope="row">Episode 4</th>
+					<th></th>
+					<td class="boxes" id="e4"></td>
+					<td class="boxes" id="e18"></td>
+					<td class="boxes" id="e32"></td>
+				  </tr>
+				  <tr>
+					<th scope="row">Episode 5</th>
+					<th></th>
+					<td class="boxes" id="e5"></td>
+					<td class="boxes" id="e19"></td>
+					<td class="boxes" id="e33"></td>
+				  </tr>
+				  <tr>
+					<th scope="row">Episode 6</th>
+					<th></th>
+					<td class="boxes" id="e6"></td>
+					<td class="boxes" id="e20"></td>
+					<td class="boxes" id="e34"></td>
+				  </tr>
+				  <tr>
+					<th scope="row">Episode 7</th>
+					<th></th>
+					<td class="boxes" id="e7"></td>
+					<td class="boxes" id="e21"></td>
+					<td class="boxes" id="e35"></td>
+				  </tr>
+				  <tr>
+					<th scope="row">Episode 8</th>
+					<th></th>
+					<td class="boxes" id="e8"></td>
+					<td class="boxes" id="e22"></td>
+					<td class="boxes" id="e36"></td>
+				  </tr>
+				  <tr>
+					<th scope="row">Episode 9</th>
+					<th></th>
+					<td class="boxes" id="e9"></td>
+					<td class="boxes" id="e23"></td>
+					<td class="boxes" id="e37"></td>
+				  </tr>
+				  <tr>
+					<th scope="row">Episode 10</th>
+					<th></th>
+					<td class="boxes" id="e10"></td>
+					<td class="boxes" id="e24"></td>
+					<td class="boxes" id="e38"></td>
+				  </tr>
+				  <tr>
+					<th scope="row">Episode 11</th>
+					<th></th>
+					<td class="boxes" id="e11"></td>
+					<td class="boxes" id="e25"></td>
+					<td class="boxes" id="e39"></td>
+				  </tr>
+				  <tr>
+					<th scope="row">Episode 12</th>
+					<th></th>
+					<td class="boxes" id="e12"></td>
+					<td class="boxes" id="e26"></td>
+					<td class="boxes" id="e40"></td>
+				  </tr>
+				  <tr>
+					<th scope="row">Episode 13</th>
+					<th></th>
+					<td class="boxes" id="e13"></td>
+					<td class="boxes" id="e27"></td>
+					<td class="boxes" id="e41"></td>
+				  </tr>
+				</table>
+			</div>
+			<div style= "margin-right: 120px; float: right;">
+				<h1 style= "text-align: center;  margin-top: 60px; font-size:3em;" id="seasonNumber">Season 1</h1>
+				<table style="color: white; table-layout: fixed; border-spacing: 5px; border-spacing: px 4px; margin-top: 100px;">
+				  <tr>
+					<th></th>
+					<th></th>
+					<th scope="col">ely</th>
+					<th scope="col">anastasia</th>
+					<th scope="col">aber</th>
+				  </tr>
+				  <tr>
+					<th scope="row">Average</th>
+					<th></th>
+					<td class="boxes" id="e42"></td>
+					<td class="boxes" id="e43"></td>
+					<td class="boxes" id="e44"></td>
+				  </tr>
+				  <tr>
+					<td class="row-seperator"></td>
+				  </tr>
+				  <tr style="border-bottom: 30px solid transparent;">
+					<th></th>
+					<th></th>
+					<td></td>
+					<td class="boxes" id="e45"></td>
+					<td></td>
+				  </tr>
+				</table>
+			</div>
+		</div>
+
+
+		
+		<script>
+			let ratings= {	"s1": [
+				{"ely":[null, 5.8, 6.2, 7.4, 5.6, 6.5, 7.1, 5.6, 5.9, 9.3, 7.7, 6.8, 7, 7.2] },
+				{"anastasia":[null, 6, 6.5, 5.5, 6.5, 5.5, 7, 5.5, 4.9, 8.9, 8, 5.9, 6.1, 7.6] },
+				{"aber":[null, 6, 7, 6, 6, 6.5, 7, 6.3, 6, 8, 7.5, 6, 6.5, 7.5]}],
+			"s2": [
+				{"ely":[6, 6.5, 7.6, 5.2, 9.1, 6.1, 6, 7.8, 8.1, 7.8, 5.3, 6.1, 9.3, 8.5]},
+				{"anastasia":[5.9, 6.8, 5, 5.2, 8.3, 6.2, 6.8, 8, 9, 8.6, 4.3, 7.5, 9.1, 8.3]},
+				{"aber":[6.5, 6.6, 6, 5.5, 8.4, 6, 6.2, 7.5, 8.5, 8.5, 4, 7, 9, 7.5]}],
+			"s3": [
+				{"ely":[5.9, 7.5, 8.2, 7.2, 6.3, 6, 5, 8.4, 8.1, 9, 10, 7.8, 6, 4]},
+				{"anastasia":[5.8, 8.1, 6.9, 7.8, 4.9, 5.7, 4.8, 5.3, 9.6, 9.8, 10, 7.8, 6.1, 4.5]},
+				{"aber":[6, 8, 7, 7.6, 5.7, 6, 4.5, 7, 9, 9.5, 10, 7.5, 6.5, 5]}],
+			"s4": [
+				{"ely":[8.5, 6.9, 7, 6.7, 6, 6.4, 7, 7.7, 8.8, 9.6, 9.7, 9.3, 8.5, 9]},
+				{"anastasia":[8, 8.2, 7.5, 7.4, 7.8, 8, 5.6, 7.5, 9.3, 9.9, 10, 9.2, 8.9, 8.1]},
+				{"aber":[8, 8, 8.5, 8, 7.4, 7.5, 6, 8, 9.5, 9.5, 10, 9, 9.5, 9]}],
+			"s5": [
+				{"ely":[null, 7.5, 6.2, 4.6, 6.7, 5.2, 5.8, 8.2, 6.2, 7.3, 9.8, 7, 8, 9]},
+				{"anastasia":[null, 7.8, 6.4, 3.9, 6.3, 6.5, 5.7, 8.4, 4.1, 5, 9.4, 4.2, 8.3, 7.9]},
+				{"aber":[null, 7.5, 6.5, 4, 6.5, 6.5, 6, 8.5, 6, 6, 9, 6.5, 8, 8.5]}],
+			"s6": [
+				{"ely":[null, null, null, null, null, null, null, null, null, null, null, null, null, null, ]},
+				{"anastasia":[null, null, null, null, null, null, null, null, null, null, null, null, null, null, ]},
+				{"aber":[null, null, null, null, null, null, null, null, null, null, null, null, null, null, ]}],
+			"s7": [
+				{"ely":[null, null, null, null, null, null, null, null, null, null, null, null, null, null, ]},
+				{"anastasia":[null, null, null, null, null, null, null, null, null, null, null, null, null, null, ]},
+				{"aber":[null, null, null, null, null, null, null, null, null, null, null, null, null, null, ]}],
+			"s8": [
+				{"ely":[null, null, null, null, null, null, null, null, null, null, null, null, null, null, ]},
+				{"anastasia":[null, null, null, null, null, null, null, null, null, null, null, null, null, null, ]},
+				{"aber":[null, null, null, null, null, null, null, null, null, null, null, null, null, null, ]}],
+			"s9": [
+				{"ely":[null, null, null, null, null, null, null, null, null, null, null, null, null, null, ]},
+				{"anastasia":[null, null, null, null, null, null, null, null, null, null, null, null, null, null, ]},
+				{"aber":[null, null, null, null, null, null, null, null, null, null, null, null, null, null, ]}],
+			"s10": [
+				{"ely":[null, null, null, null, null, null, null, null, null, null, null, null, null, null, ]},
+				{"anastasia":[null, null, null, null, null, null, null, null, null, null, null, null, null, null, ]},
+				{"aber":[null, null, null, null, null, null, null, null, null, null, null, null, null, null, ]}],
+			"s11": [
+				{"ely":[null, null, null, null, null, null, null, null, null, null, null, null, null, null, ]},
+				{"anastasia":[null, null, null, null, null, null, null, null, null, null, null, null, null, null, ]},
+				{"aber":[null, null, null, null, null, null, null, null, null, null, null, null, null, null, ]}],
+			"s12": [
+				{"ely":[null, null, null, null, null, null, null, null, null, null, null, null, null, null, ]},
+				{"anastasia":[null, null, null, null, null, null, null, null, null, null, null, null, null, null, ]},
+				{"aber":[null, null, null, null, null, null, null, null, null, null, null, null, null, null, ]}],
+			"s13": [
+				{"ely":[null, null, null, null, null, null, null, null, null, null, null, null, null, null, ]},
+				{"anastasia":[null, null, null, null, null, null, null, null, null, null, null, null, null, null, ]},
+				{"aber":[null, null, null, null, null, null, null, null, null, null, null, null, null, null, ]}],
+			"s14": [
+				{"ely":[null, null, null, null, null, null, null, null, null, null, null, null, null, null, ]},
+				{"anastasia":[null, null, null, null, null, null, null, null, null, null, null, null, null, null, ]},
+				{"aber":[null, null, null, null, null, null, null, null, null, null, null, null, null, null, ]}],
+			"s15": [
+				{"ely":[null, null, null, null, null, null, null, null, null, null, null, null, null, null, ]},
+				{"anastasia":[null, null, null, null, null, null, null, null, null, null, null, null, null, null, ]},
+				{"aber":[null, null, null, null, null, null, null, null, null, null, null, null, null, null, ]}]
+			}
+		let len = 14
+		openSeason(0)
+		function openSeason(number){
+			let text1 = "";
+			let text2 = "";
+			let text3 = "";
+			let obj = ratings[Object.keys(ratings)[number]];
+			if (number == 15) {
+				document.getElementById("seasonNumber").innerHTML = "Extra Episodes"
+				} else {
+				document.getElementById("seasonNumber").innerHTML = "Season "+(number+1)
+				}
+			for (let i = 0; i < len; i++) {
+				if (obj[0].ely[i] == undefined){
+					obj[0].ely[i] = "-"
+				}
+				text1 += obj[0].ely[i] + " ";
+				if (obj[1].anastasia[i] == undefined){
+					obj[1].anastasia[i] = "-"
+				}
+				text2 += obj[1].anastasia[i] + " ";
+				if (obj[2].aber[i] == undefined){
+					obj[2].aber[i] = "-"
+				}
+				text3 += obj[2].aber[i] + " ";
+			}
+			let sum1 = 0
+			let sum2 = 0
+			let sum3 = 0
+			let counter1 = 0
+			let counter2 = 0
+			let counter3 = 0
+
+			text1 += text2
+			text1 += text3
+			words=text1.split(" ")
+			for (let i = 0; i < 14; i++) {
+				if ((words[i]) != "-") {
+					counter1 += 1
+					sum1 += parseFloat(words[i])
+				}
+				if ((words[i+14]) != "-") {
+					counter2 += 1
+					sum2 += parseFloat(words[i+14])
+				}
+				if ((words[i+28]) != "-") {
+					counter3 += 1
+					sum3 += parseFloat(words[i+28])
+				}
+			}
+			avg1=parseFloat(((parseFloat(sum1))/counter1).toFixed(2))
+			avg2=parseFloat(((parseFloat(sum2))/counter2).toFixed(2))
+			avg3=parseFloat(((parseFloat(sum3))/counter3).toFixed(2))
+			avg4= ((avg1+avg2+avg3)/3).toFixed(2)
+			words.splice(42,1)
+			words.push(avg1, avg2, avg3, avg4)
+			for (let i = 0; i < 46; i++) {
+				  document.getElementById("e"+i).innerHTML = words[i];
+				  document.getElementById("e"+i).style.color = 'black';
+				  if (words[i] == "-"){
+					document.getElementById("e"+i).style.backgroundColor = '#5a5a5a';
+				  }
+				  if (words[i] >= 0 && words[i] < 1){
+					document.getElementById("e"+i).style.backgroundColor = '#000000';
+					document.getElementById("e"+i).style.color = 'white';
+				  }
+				  if (words[i] >= 1 && words[i] < 2){
+					document.getElementById("e"+i).style.backgroundColor = '#800000';
+				  }
+				  if (words[i] >= 2 && words[i] < 3){
+					document.getElementById("e"+i).style.backgroundColor = '#FF0000';
+				  }
+				  if (words[i] >= 3 && words[i] < 4){
+					document.getElementById("e"+i).style.backgroundColor = '#FF4600';
+				  }
+				  if (words[i] >= 4 && words[i] < 5){
+					document.getElementById("e"+i).style.backgroundColor = '#FF8C00';
+				  }
+				  if (words[i] >= 5 && words[i] < 6){
+					document.getElementById("e"+i).style.backgroundColor = '#FFCB00';
+				  }
+				  if (words[i] >= 6 && words[i] < 7){
+					document.getElementById("e"+i).style.backgroundColor = '#C7E600';
+				  }
+				  if (words[i] >= 7 && words[i] < 8){
+					document.getElementById("e"+i).style.backgroundColor = '#16FF61';
+				  }
+				  if (words[i] >= 8 && words[i] < 9){
+					document.getElementById("e"+i).style.backgroundColor = '#0FD592';
+				  }
+				  if (words[i] >= 9 && words[i] < 10){
+					document.getElementById("e"+i).style.backgroundColor = '#069DD3';
+				  }
+				  if (words[i] == 10){
+					document.getElementById("e"+i).style.backgroundColor = 'white';
+					document.getElementById("e"+i).style.color = 'red';
+				  }
+		  
+			}
+		}
+
+
+
+
+		</script>
+	
+	</body>
+	</html>
